@@ -1,5 +1,7 @@
-#Putthipong Phukhansung
-#633040224-3
+'''
+Puttthipong Phukhansung
+633040224-3
+'''
 
 
 num1 = float(input("Enter a number:"))
