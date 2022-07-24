@@ -6,7 +6,6 @@ Putthipong Phukhansung
 import random
 
 
-
 def random_number():  
     global n 
     min_num = 1
@@ -39,14 +38,10 @@ def guess_number():
                 print(f"Please enter an integer in th range [1, 10]")
             else:
                 break
-            
-                       
+                                  
         except ValueError:            
             print("please enter an interger to guess")
         
-
-      
-
     if guess_num == n:
             print("Congrats that you guess the number correctly")
 
