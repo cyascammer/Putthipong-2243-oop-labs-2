@@ -52,8 +52,6 @@ def guess_number():
             print("Please enter an interger to guess")
 
 
-
-
 if __name__ == '__main__':
     random_number()
     guess_number()
