@@ -14,37 +14,44 @@ def random_number():
     return n
 
 def guess_number():
-    guess_num = int(input("Enter an integer to guess:"))
+
     i = 0
     round_to_guess = 4
+    guess_num = int(input("Enter an integer to guess:"))
 
     while round_to_guess >= 0:
         try:
 
-            if guess_num < n:
-                print("Try a higher number.")
-                print("You have",round_to_guess,"guesses remaining")
-                guess_num = int(input("Enter an integer to guess:"))
-                i += 1
-                round_to_guess -= 1
-            elif guess_num > n:
-                print("Try a lower number.")
-                print("You have",round_to_guess,"guesses remaining")
-                guess_num = int(input("Enter an integer to guess:"))
-                i += 1
-                round_to_guess -= 1
+            if 0 < guess_num <= 10:
+                if guess_num < n:
+                    print("Try a higher number.")
+                    print("You have",round_to_guess,"guesses remaining")
+                    guess_num = int(input("Enter an integer to guess:"))
+                    i += 1
+                    round_to_guess -= 1
+                elif guess_num > n:
+                    print("Try a lower number.")
+                    print("You have",round_to_guess,"guesses remaining")
+                    guess_num = int(input("Enter an integer to guess:"))
+                    i += 1
+                    round_to_guess -= 1
 
-            elif guess_num <= 0 or guess_num > 10 :
-                print(f"Please enter an integer in th range [1, 10]")
-                i += 1
+                elif guess_num == n:
+                    print("Congrats that you guess the number correctly")
+                    break
+                else:
+                    round_to_guess == 0
+                    break
             else:
-                break
-                                  
+                raise NameError
+
+        except NameError:
+            print("Please enter an integer in the range [1, 10]")
+            guess_num = int(input("Enter an integer to guess:"))                     
         except ValueError:            
-            print("please enter an interger to guess")
-        
-    if guess_num == n:
-            print("Congrats that you guess the number correctly")
+            print("Please enter an interger to guess")
+
+
 
 
 if __name__ == '__main__':
