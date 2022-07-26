@@ -14,25 +14,22 @@ def random_number():
     return n
 
 def guess_number():
-
     i = 0
     round_to_guess = 4
-    guess_num = int(input("Enter an integer to guess:"))
-
+    
     while round_to_guess >= 0:
         try:
+            guess_num = int(input("Enter an integer to guess:"))
 
             if 0 < guess_num <= 10:
                 if guess_num < n:
                     print("Try a higher number.")
                     print("You have",round_to_guess,"guesses remaining")
-                    guess_num = int(input("Enter an integer to guess:"))
                     i += 1
                     round_to_guess -= 1
                 elif guess_num > n:
                     print("Try a lower number.")
                     print("You have",round_to_guess,"guesses remaining")
-                    guess_num = int(input("Enter an integer to guess:"))
                     i += 1
                     round_to_guess -= 1
 
@@ -46,8 +43,7 @@ def guess_number():
                 raise NameError
 
         except NameError:
-            print("Please enter an integer in the range [1, 10]")
-            guess_num = int(input("Enter an integer to guess:"))                     
+            print("Please enter an integer in the range [1, 10]")                 
         except ValueError:            
             print("Please enter an interger to guess")
 
